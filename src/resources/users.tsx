@@ -51,6 +51,7 @@ import {
 } from "react-admin";
 
 import AvatarField from "../components/AvatarField";
+import AvatarInput from "../components/AvatarInput";
 import { ServerNoticeBulkButton, ServerNoticeButton } from "../components/ServerNotices";
 import { DATE_FORMAT } from "../components/date";
 import { DeviceRemoveButton } from "../components/devices";
@@ -194,7 +195,7 @@ export const UserEdit = (props: EditProps) => {
     <Edit {...props} title={<UserTitle />} actions={<UserEditActions />}>
       <TabbedForm>
         <FormTab label={translate("resources.users.name", { smart_count: 1 })} icon={<PersonPinIcon />}>
-          <AvatarField source="avatar_src" sortable={false} sx={{ height: "120px", width: "120px", float: "right" }} />
+          <AvatarInput source="avatar_src" sortable={false} />
           <TextInput source="id" disabled />
           <TextInput source="displayname" />
           <PasswordInput source="password" autoComplete="new-password" helperText="resources.users.helper.password" />
