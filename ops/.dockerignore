@@ -1,0 +1,7 @@
+# Exclude runtime data from Docker build context
+synapse-data/media_store/
+synapse-data/homeserver.db*
+synapse-data/homeserver.pid
+synapse-data/*.log*
+synapse-data/localhost.signing.key
+synapse-data/localhost.log.config

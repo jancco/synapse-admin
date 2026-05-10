@@ -1,0 +1,10 @@
+# Custom Synapse image with dev-friendly defaults baked in.
+# Config lives at /synapse-config/ (inside the image), not /data/ (volume).
+# This ensures enable_authenticated_media: false survives volume remounts.
+FROM matrixdotorg/synapse:v1.141.0
+
+# Copy config to an image-internal path — won't be shadowed by /data volume
+COPY synapse-data/homeserver.yaml /synapse-config/homeserver.yaml
+
+# Override the default config path
+ENV SYNAPSE_CONFIG_PATH=/synapse-config/homeserver.yaml
